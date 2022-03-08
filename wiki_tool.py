@@ -81,6 +81,7 @@ BASE = "pandoc -f %s -t %s -s --template=%s -V css=%s -V js=%s -V meta_vars=%s -
 # BASE = "pandoc -f %s -t %s -s --template=%s -V css=%s -V js=%s -V meta_vars=%s --lua-filter=%s -M link_base=%s" % (OUT_FORMAT, OUT_TYPE, TEMPLATE_FILE, CSS_FILE, JS_FILE, NAV_JSON_FILE, STANDARD_LUA_FILE, os.path.join(ROOT, OUT_NAME))
 
 menu_style = AbstractStyle(" \t", "-\t", "-\t")
+toc_style = AbstractStyle("  ", "* ", "* ")
 
 def pos_int(x):
 	x = int(x)
