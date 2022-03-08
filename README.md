@@ -1,6 +1,8 @@
 # WikiTool
 
-**Requires pandoc and aspell installed for user**
+**Requires [pandoc](https://pandoc.org/installing.html) and [aspell](http://aspell.net/)[^1] installed for user**
+
+**Requires python library [anytree](https://anytree.readthedocs.io/en/latest/installation.html) installed**
 
 ## TODO
 
@@ -18,4 +20,6 @@
 * [ ] Spell-check
   * lua script now identifies which words are zean and english by checking if they are surrounded by {{...}}
   * Next is to add zean dictionary to aspell
-    * Figure out how to use aspell  
+    * Figure out how to use aspell
+  
+ [^1]: Windows Port 0.5 works
