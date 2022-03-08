@@ -1,0 +1,487 @@
+@import url('../assets/fonts/font.css');
+
+html {
+	background-color: #2a2a2a;
+	color: #aaa;
+	font-size: 18px;
+	font-family: "Brygada1918-Regular", Garamond, Baskerville, "Baskerville Old Face", "Hoefler Text", "Times New Roman", serif;
+	line-height: 1.5em;
+	scroll-behavior: smooth;
+}
+
+body {
+	margin: 0;
+}
+
+.container {
+	max-width: 80%;
+	margin: 0 auto;
+	padding: 0;
+	hyphens: auto;
+	word-wrap: break-word;
+	text-rendering: optimizeLegibility;
+	font-kerning: normal;
+	transition: margin-left 0.5s;
+	overflow: overlay;
+}
+
+@media (max-width: 50em) {
+	.container {
+		border-style: none;
+	}
+}
+
+header {
+	text-align: center;
+}
+
+
+.collapsible {
+  background-color: #606060;
+  cursor: pointer;
+  padding: 2em;
+  width: 100%;
+  border: none;
+  text-align: left;
+  border-radius: 15px;
+}
+
+.collapsible:hover {	
+  background-color: #808080;
+}
+
+.collapsible:after {
+	content: '+';
+	font-size: 2em;
+	color: #aaa;
+	float: right;
+}
+
+.collapsible.active {
+  background-color: #808080;
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 0;
+  margin: 0;
+}
+
+.collapsible.active:after {
+	content: "-";
+}
+
+.toc {
+	background-color: #808080;
+	display: none;
+	overflow: hidden;
+	padding: 0 0 2em 0;
+	border-radius: 0 0 15px 15px;
+	margin: 0 0 1em 0;
+}
+
+.toc li {
+	list-style: none;
+}
+.toc a span:last-child {
+	display: none;
+}
+
+
+p {
+	margin: 1em 0;
+	text-indent: 1.5rem;
+	line-height: 1.5em;
+}
+
+.zean {
+	color: #bf3f3f;
+}
+
+a .zean {
+	color: #bf0000;
+}
+
+a:hover .zean {
+	color: #640000;
+}
+
+img {
+	max-width: 95%;
+}
+
+h1, h2, h3, h4, h5, h6 {
+	color: #aaa;
+	line-height: 1.5em;
+}
+
+h1 {
+	font-weight: bold;
+	font-style: italic;
+}
+
+h2 {
+	font-weight: bold;
+}
+
+h3 {
+	font-weight: normal;
+	font-style: italic;
+}
+
+h4 {
+	font-weight: bold;
+}
+
+h5 {
+	font-weight: normal;
+	font-style: italic;
+}
+
+h6 {
+	font-weight: bold;
+	font-style: italic;
+}
+
+button {
+	margin: 0 0 1em 0;
+}
+
+button.collapsible h1,
+button.collapsible h2,
+button.collapsible h3,
+button.collapsible h4,
+button.collapsible h5,
+button.collapsible h6 {
+	display: inline-block;
+	margin: 0;
+}
+
+.title {
+	font-size: 2.5em;
+	padding: 1em 0;
+	margin: 0;
+	line-height: 1.5em;
+}
+
+.subtitle {
+	margin: 0;
+	font-size: 2em;
+	text-indent: 0;
+	padding: 0 0 1em 0;
+	line-height: 1.5em;
+}
+
+a {
+	color: #dedede;
+	text-decoration: none;
+	font-weight: normal;
+	font-style: normal;
+	line-height: 1.5em;
+}
+
+a:hover,
+a:focus {
+	color: #666;
+}
+
+blockquote {
+	background-color: #444;
+	margin: 1em 0 1em 1.7em;
+	padding: 0.25em 0 0.5em 1em;
+	border-left: 3px solid #e6e6e6;
+	border-radius: 2px 15px 15px 2px;
+}
+
+blockquote ol, blockquote ul {
+	margin: 0;
+}
+
+dl {
+	background-color: #606060;
+	padding: 1em;
+	border-radius: 15px;
+	margin: 0;
+}
+
+dt {
+	width: auto;
+	margin: 0.5em;
+	border-radius: 15px;
+	padding: 1em;
+	background-color: #3a3a3a
+}
+
+dd {
+	text-indent: 1.5rem;
+}
+
+ol, ul {
+	padding-left: 2.5em;
+}
+
+li > ol, li > ul {
+	margin-top: 0;
+}
+
+li p:first-child {
+	text-indent: 0;
+}
+
+dd > ul > li, dd > ol > li {
+	text-indent: 0;
+}
+
+.sidebar {
+	position: fixed;
+	display: block;
+	margin: 0;
+	padding: 3.5em 0.5em 3.5em 0.5em;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	min-width: 20%;
+	width: auto;
+	background-color: #505050;
+	overflow: auto;
+	z-index: 1;
+	transform: scaleX(0);
+	transform-origin: left top;
+	transition: transform 0.5s;
+}
+
+.sidebar > ul {
+	list-style-type: none;
+	padding: 0;
+	margin: 0;
+	width: auto;
+}
+
+.sidebar .closebtn {
+	position: absolute;
+	top: 0.5em;
+	right: 0.5em;
+	font-size: 36px;
+	background-color: #505050;
+	color: #aaa;
+	padding: 0.3em 0.3em;
+	border: none;
+	margin: 0;
+	border-radius: 5px;
+	transition: 0.5s;
+	line-height: 1rem;
+}
+
+.sidebar .closebtn:hover {
+	background-color: #808080;
+}
+
+.openbtn {
+	position: fixed;
+	font-size: 18px;
+	background-color: #505050;
+	color: #aaa;
+	padding: 0.75em 0.75em;
+	border: none;
+	border-radius: 5px;
+	margin: 0.5em;
+	transition: 0.5s;
+	z-index: 1;
+	line-height: 1rem;
+}
+
+.openbtn:hover {
+	background-color: #808080;
+}
+
+.sidebar li {
+	text-align: left;
+	display: block;
+	width: auto;
+}
+
+.sidebar li a:hover {
+	background-color: #808080;
+	cursor: pointer;
+}
+
+.sidebar li a.active {
+	color: #aaa;
+	background-color: #303030;
+	pointer-events: none;
+	cursor: default;
+}
+
+.dropdown {
+	position: relative;
+	width: 100%;
+	padding: 0 0;
+}
+
+.dropdown a, .expand, .expand-div {
+	position: relative;
+	display: inline-block;
+	color: #aaa;
+	background-color: #505050;
+	font-size: 14px;
+	font-family: "Brygada1918-Regular", Garamond, Baskerville, "Baskerville Old Face", "Hoefler Text", "Times New Roman", serif;
+	line-height: 1.5em;
+	border: none;
+	margin: 0.5em 0;
+	text-decoration: none;
+	transition: 0.5s;
+}
+
+.dropdown a {
+	padding: 0.5em 0 0.5em 4%;
+	text-align: left;
+	width: 80%;
+}
+
+.expand, .expand-div {
+	padding: 0.5em 0;
+	text-align: center;
+	width: 15%;
+	height: 100%;
+}
+
+
+.expand:hover:enabled {
+	background-color: #808080;
+}
+
+.expand:disabled {
+	color: #505050;
+}
+
+.dropdown-content {
+	position: relative;
+	display: none;
+	width: auto;
+	z-index: 1;
+	box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+	padding: 6px 8px;
+	margin: 6px 8px;
+}
+
+/*
+.dropdown:hover > .dropdown-content {
+	display: block;
+}
+*/
+
+.task-list {
+	list-style: none;
+}
+
+code {
+	font-family: Menlo, Monaco, 'Lucida Console', Consolas, monospace;
+	font-size: 85%;
+	margin: 0;
+	white-space: pre-wrap;
+}
+
+pre {
+	margin: 1em 0;
+	overflow: auto;
+}
+
+pre code {
+	padding: 0;
+	overflow: visib
+	le;
+}
+.sourceCode {
+	background-color: transparent;
+	overflow: visible;
+}
+
+hr {
+	background-color: #aaaaaa;
+	border: none;
+	height: 5px;
+	margin: 1em 0;
+}
+
+table {
+	width: 100%;
+	margin: 1em 0;
+	margin-bottom: 24px;
+	border-collapse: collapse;
+	border-bottom: 2px solid #aaaaaa;
+	border-top: 2px solid #aaaaaa;
+	overflow-x: auto;
+	font-variant-numeric: lining-nums tabular-nums;
+}
+
+table caption {
+	margin-bottom: 0.75em;
+}
+
+tbody {
+	margin-top: 0.5em;
+}
+
+th {
+	background-color: transparent;
+	border-top: none;
+	border-left: none;
+	border-right: none;
+	border-bottom: 3px double #aaaaaa;
+	padding: 0.25em 0.5em 0.25em 0.5em;
+}
+
+td {
+	border-top: none;
+	border-left: none;
+	border-bottom: none;
+	border-right: none;
+	padding: 0.125em 0.5em 0.25em 0.5em;
+}
+
+span.smallcaps {
+	font-variant: small-caps;
+}
+
+span.underline {
+	text-decoration: underline;
+}
+
+div.column {
+	display: inline-block;
+	vertical-align: top;
+	width: 50%;
+}
+
+div.hanging-indent{
+	margin-left: 1.5rem;
+	text-indent: -1.5rem;
+}
+
+.display.math{
+	display: block; 
+	text-align: center; 
+	margin: 0.5rem auto;
+	box-sizing: border-box;
+}
+
+.img-magnifier-container {
+	position: relative;
+	box-sizing: border-box;
+}
+
+.img-magnifier-glass {
+	position: absolute;
+	border: 2px solid #dedede;
+	border-radius: 50%;
+	cursor: none;
+	/*cursor: default*/
+	/*Set the size of the magnifier glass:*/
+	width: 150px;
+	height: 150px;
+	box-sizing: border-box;
+}
+
+/* Add border for the last row of the table.           */
+/*      (Might be of use for table footnotes, later).  */
+/* tr:last-child td { border-top: 2px solid black; }   */
+
+
+/*https://www.w3schools.com/howto/howto_js_collapsible.asp*/
